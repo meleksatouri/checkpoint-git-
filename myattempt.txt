@@ -1,0 +1,104 @@
+mallu@Mallu MINGW64 ~
+$ cd Downloads
+mallu@Mallu MINGW64 ~/Downloads
+$ cd learn-git-again
+mallu@Mallu MINGW64 ~/Downloads/learn-git-again 
+$ git init
+initializing empty Git repository in C:/Users/mallu/Downloads/learn-git-again/.git/
+mallu@Mallu MINGW64 ~/Downloads/learn-git-again (master)
+$ touch third.txt
+mallu@Mallu MINGW64 ~/Downloads/learn-git-again (master)
+$ git add third.txt
+mallu@Mallu MINGW64 ~/Downloads/learn-git-again (master)
+$ git commit -m "adding third.txt"
+[master 5db7f17] adding third.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 third.txt
+mallu@Mallu MINGW64 ~/Downloads/learn-git-again (master)
+$ touch fourth.txt
+mallu@Mallu MINGW64 ~/Downloads/learn-git-again (master)
+$ git add fourth.txt
+mallu@Mallu MINGW64 ~/Downloads/learn-git-again (master)
+$ git commit -m "adding fourth.txt"
+[master 4c7122b] adding fourth.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 fourth.txt
+mallu@Mallu MINGW64 ~/Downloads/learn-git-again (master)
+$ git log --oneline 
+4c7122b adding fourth.txt
+5db7f17 adding third.txt
+mallu@Mallu MINGW64 ~/Downloads/learn-git-again (master)
+$ git revert 5db7f17
+[master 7c6002ed] Remove third.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 third.txt
+mallu@Mallu MINGW64 ~/Downloads/learn-git-again (master)
+$ git log
+commit 7c6002edfa404fb22883e76fd1b65d06fbf15401 (HEAD -> master)
+Author: meleksatouri <mallusat2006@gmail.com>
+Date:   Fri Jul 14 21:31:27 2023 +0100
+
+    Remove third.txt
+
+    This reverts commit 5db7f179d1b1cd1aeddd47caffdd752fda52f0a8.
+
+commit 4c7122be5c5be8f2b25031808c36b41d27244230
+Author: meleksatouri <mallusat2006@gmail.com>
+Date:   Fri Jul 14 21:30:47 2023 +0100
+
+    adding fourth.txt
+
+commit 5db7f179d1b1cd1aeddd47caffdd752fda52f0a8
+Author: meleksatouri <mallusat2006@gmail.com>
+Date:   Fri Jul 14 21:30:04 2023 +0100
+
+    adding third.txt
+mallu@Mallu MINGW64 ~/Downloads/learn-git-again (master)
+$ git config --global core.pager cat
+mallu@Mallu MINGW64 ~/Downloads/learn-git-again (master)
+$ git config --global
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-pattern]
+    --get-all             get all values: key [value-pattern]
+    --get-regexp          get values for regexp: name-regex [value-pattern]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value-pattern]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-pattern]
+    --unset-all           remove all matches: name [value-pattern]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    --fixed-value         use string equality when comparing values to 'value-pattern'
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <type>     value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --bool-or-str         value is --bool or string
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --show-scope          show scope of config (worktree, local, global, system, command)
+    --default <value>     with --get, use default value when missing entry
+
+
